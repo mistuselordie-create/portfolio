@@ -4,84 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mistus Elordie | Digital Advocacy & Creative Portfolio</title>
-    
     <meta property="og:title" content="Mistus Elordie | Portfolio">
     <meta property="og:description" content="Digital Advocacy, Creative Satire, & Literary Criticism.">
     <meta property="og:image" content="https://mistuselordie-create.github.io/mistuselordie-portfolio/1000048048_2.jpg">
     <meta property="og:url" content="https://mistuselordie-create.github.io/mistuselordie-portfolio/">
     <meta property="og:type" content="website">
-
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mistus Elordie | Portfolio">
     <meta name="twitter:description" content="Digital Advocacy, Creative Satire, & Literary Criticism.">
     <meta name="twitter:image" content="https://mistuselordie-create.github.io/mistuselordie-portfolio/1000048048_2.jpg">
-
     <style>
         html { scroll-behavior: smooth; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; padding: 30px 20px; color: #37352f; max-width: 800px; margin: 0 auto; line-height: 1.6; background-color: #ffffff; }
-        
-        h1 { font-family: "Georgia", serif; font-size: 2.2em; font-weight: 700; color: #191919; letter-spacing: -0.5px; margin-bottom: 20px; padding-bottom: 10px; }
+        h1 { font-family: "Georgia", serif; font-size: 2.2em; font-weight: 700; color: #191919; letter-spacing: -0.5px; margin-bottom: 20px; padding-bottom: 10px; text-align: center; }
         h2 { font-size: 1.5em; margin-top: 45px; border-bottom: 1px solid #e8e8e8; padding-bottom: 8px; color: #191919; font-weight: 600; }
         h3 { font-size: 1.2em; margin-top: 25px; margin-bottom: 5px; color: #2e2e2e; font-weight: 600; }
-        
         p, ul { font-size: 15px; color: #37352f; }
         ul { padding-left: 20px; }
         li { margin-bottom: 6px; }
         a { color: #2383e2; text-decoration: none; }
         a:hover { text-decoration: underline; }
         hr { border: 0; border-top: 1px solid #e8e8e8; margin: 40px 0; }
-
         .header-section { display: flex; gap: 24px; align-items: flex-start; margin-bottom: 25px; flex-wrap: wrap; }
         .portfolio-banner { width: 100%; max-width: 580px; height: auto; object-fit: contain; border-radius: 8px; border: 1px solid #edece9; display: block; flex: 1; min-width: 200px; }
-        
         .book-side-card { background: #fafafa; border: 1px solid #edece9; border-radius: 8px; padding: 16px; flex: 0 0 140px; text-align: center; }
         .book-side-card img { width: 100%; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
         .book-side-card p { font-size: 11px; margin: 8px 0 4px 0; font-weight: 600; color: #191919; }
         .book-side-card a { font-size: 11px; color: #2383e2; }
-
         .toc-box { background: #f7f6f3; border-radius: 6px; padding: 18px; margin: 25px 0; border: 1px solid #edece9; }
         .toc-title { font-weight: 600; margin-bottom: 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px; color: #6b6a67; }
         .toc-list { list-style: none; padding-left: 0; margin: 0; }
         .toc-list li { margin-bottom: 8px; font-size: 14px; }
         .toc-list a { color: #4f4d45; }
         .toc-list a:hover { color: #2383e2; text-decoration: none; }
-        
         .about-box { background: #fafafa; border-left: 4px solid #37352f; padding: 18px; margin-bottom: 35px; border-radius: 0 6px 6px 0; border: 1px solid #edece9; }
-        
         .channel-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
         .btn-youtube { display: inline-flex; align-items: center; gap: 6px; background: #ff0000; color: white; padding: 8px 14px; border-radius: 5px; font-size: 13px; font-weight: 600; text-decoration: none; }
         .btn-youtube:hover { background: #cc0000; text-decoration: none; color: white; }
         .btn-medium { display: inline-flex; align-items: center; gap: 6px; background: #191919; color: white; padding: 8px 14px; border-radius: 5px; font-size: 13px; font-weight: 600; text-decoration: none; }
         .btn-medium:hover { background: #333; text-decoration: none; color: white; }
-
         .callout-box { background: rgba(241, 241, 239, 0.5); border: 1px solid #edece9; border-radius: 6px; padding: 20px; margin: 25px 0; position: relative; }
         .callout-emoji { font-size: 1.4em; margin-bottom: 8px; display: block; }
-        
         details { background: #fafafa; border: 1px solid #edece9; border-radius: 6px; padding: 14px; margin: 14px 0; transition: background 0.2s ease; }
         details[open] { background: #ffffff; }
         summary { font-weight: 600; cursor: pointer; color: #2383e2; outline: none; user-select: none; transition: color 0.2s ease; }
         summary:hover { color: #1b62ab; }
-        
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
         .video-card { background: #fafafa; border: 1px solid #edece9; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between; }
         .video-container { position: relative; width: 100%; aspect-ratio: 9 / 16; background: #000; border-radius: 6px; overflow: hidden; margin-bottom: 12px; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        
         .script-btn { display: inline-block; text-align: center; background: #ffffff; color: #37352f; border: 1px solid #d3d1cb; padding: 6px 12px; font-size: 12px; font-weight: 600; border-radius: 4px; text-decoration: none; margin-top: 12px; transition: all 0.2s ease; }
         .script-btn:hover { background: #f7f6f3; color: #2383e2; border-color: #2383e2; text-decoration: none; }
         .inline-script-btn { display: inline-block; background: #ffffff; color: #37352f; border: 1px solid #d3d1cb; padding: 4px 10px; font-size: 12px; font-weight: 600; border-radius: 4px; text-decoration: none; margin-top: 10px; transition: all 0.2s ease; }
         .inline-script-btn:hover { background: #f7f6f3; color: #2383e2; border-color: #2383e2; text-decoration: none; }
-        
         .book-showcase { display: grid; grid-template-columns: 180px 1fr; gap: 25px; background: #fafafa; border: 1px solid #edece9; border-radius: 8px; padding: 20px; margin-top: 15px; }
         .book-cover { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 1px solid #d3d1cb; }
-        
+        .quote-box { background: #f7f6f3; border-left: 4px solid #191919; padding: 20px 24px; margin: 40px 0; border-radius: 0 6px 6px 0; }
+        .quote-box p { font-family: "Georgia", serif; font-size: 1.1em; font-style: italic; color: #191919; margin: 0; }
+        .quote-box span { display: block; margin-top: 8px; font-size: 13px; font-weight: 600; color: #6b6a67; }
         @media (max-width: 600px) {
             .book-showcase { grid-template-columns: 1fr; text-align: center; }
             .book-cover { max-width: 160px; margin: 0 auto; }
             .header-section { flex-direction: column; }
             .book-side-card { flex: 1; max-width: 100%; }
         }
-
         .hire-box { background: #f7f6f3; border: 1px solid #edece9; padding: 35px 20px; margin: 60px 0 20px 0; text-align: center; border-radius: 6px; }
         .hire-text { font-size: 1.15em; font-weight: 600; color: #191919; margin: 0 0 12px 0; }
         .hire-email { font-size: 1.1em; font-weight: 700; margin: 0; }
@@ -282,6 +268,4 @@
         </div>
         <div style="display: flex; flex-direction: column; justify-content: center;">
             <strong style="font-size: 1.1em; color: #191919;">D.I.D I Die & Leave Me Living?</strong>
-            <p style="margin: 8px 0 16px 0; font-size: 14px; line-height: 1.5; color: #37352f;">A raw, full-length poetry collection navigating survival, identity fragmentation, and existential endurance.</p>
-            <div>
-                <a href="https://a.co/d/04jOsB0I" target="_blank" style="display: inline-block; background: #2383e2; color
+            <p style="margin: 8px 0 16px 0; font-size: 14
