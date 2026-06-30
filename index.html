@@ -1,1040 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mistus Elordie | Satirist & Systemic Critic</title>
-    <meta name="description" content="Mistus Elordie is a satirist and systemic critic who writes about the injustice and discrimination of minority groups baked into human society — and the flawed logic used to justify it.">
-    <meta property="og:title" content="Mistus Elordie | Satirist & Systemic Critic">
-    <meta property="og:description" content="Digital Advocacy, Creative Satire, & Literary Criticism.">
-    <meta property="og:image" content="1000048048_2.jpg">
-    <meta property="og:url" content="https://mistuselordie-create.github.io/mistuselordie-portfolio/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mistus Elordie | Satirist & Systemic Critic">
-    <meta name="twitter:description" content="Digital Advocacy, Creative Satire, & Literary Criticism.">
-    <meta name="twitter:image" content="1000048048_2.jpg">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --ink: #1a1814;
-            --ink-soft: #2a2724;
-            --ink-muted: #4a4744;
-            --paper: #faf9f6;
-            --paper-warm: #f3f0ea;
-            --rule: #ddd9d0;
-            --accent: #8b1a1a;
-            --accent-soft: rgba(139,26,26,0.08);
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background-color: var(--paper);
-            color: var(--ink);
-            line-height: 1.7;
-        }
-
-        /* ── MASTHEAD ── */
-        .masthead {
-            border-bottom: 1px solid var(--rule);
-            padding: 48px 40px 36px;
-            max-width: 860px;
-            margin: 0 auto;
-        }
-
-        .masthead-rule-top {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 28px;
-        }
-
-        .masthead-rule-top span {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--ink-muted);
-            white-space: nowrap;
-        }
-
-        .masthead-rule-top::before,
-        .masthead-rule-top::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--rule);
-        }
-
-        .site-title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            font-weight: 900;
-            color: var(--ink);
-            letter-spacing: -1px;
-            line-height: 1;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .site-title em {
-            font-style: italic;
-            color: var(--accent);
-        }
-
-        .site-tagline {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.1rem;
-            font-style: normal;
-            color: var(--ink-muted);
-            text-align: center;
-            letter-spacing: 0.3px;
-            margin-bottom: 28px;
-        }
-
-        /* ── NAV LINKS ── */
-        .masthead-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 28px;
-        }
-
-        .link-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            padding: 8px 16px;
-            border-radius: 2px;
-            text-decoration: none;
-            border: 1px solid var(--rule);
-            color: var(--ink-soft);
-            background: white;
-            transition: all 0.2s;
-        }
-
-        .link-pill:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .link-pill.yt {
-            background: #ff0000;
-            color: white;
-            border-color: #ff0000;
-        }
-
-        .link-pill.yt:hover {
-            background: #cc0000;
-            border-color: #cc0000;
-            color: white;
-        }
-
-        /* ── TOC ── */
-        .toc-strip {
-            border-top: 1px solid var(--rule);
-            padding-top: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 4px 20px;
-        }
-
-        .toc-strip a {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: var(--ink-muted);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .toc-strip a:hover { color: var(--accent); }
-
-        /* ── MAIN LAYOUT ── */
-        .container {
-            max-width: 860px;
-            margin: 0 auto;
-            padding: 0 40px 80px;
-        }
-
-        /* ── HEADER / BIO SECTION ── */
-        .bio-section {
-            display: grid;
-            grid-template-columns: 1fr 160px;
-            gap: 40px;
-            padding: 48px 0 40px;
-            border-bottom: 1px solid var(--rule);
-            align-items: start;
-        }
-
-        .bio-banner {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-            border: 1px solid var(--rule);
-            display: block;
-            margin-bottom: 20px;
-        }
-
-        .bio-text {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.15rem;
-            color: var(--ink-soft);
-            line-height: 1.8;
-            margin-bottom: 16px;
-        }
-
-        .bio-meta {
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--ink-muted);
-        }
-
-        .bio-meta a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .bio-meta a:hover { text-decoration: underline; }
-
-        .book-card {
-            background: white;
-            border: 1px solid var(--rule);
-            border-radius: 4px;
-            padding: 16px;
-            text-align: center;
-        }
-
-        .book-card img {
-            width: 100%;
-            border-radius: 3px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-            margin-bottom: 10px;
-        }
-
-        .book-card-title {
-            font-family: 'EB Garamond', serif;
-            font-size: 14px;
-            font-style: italic;
-            color: var(--ink);
-            margin-bottom: 6px;
-            line-height: 1.4;
-        }
-
-        .book-card a {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--accent);
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-
-        .book-card a:hover { text-decoration: underline; }
-
-        /* ── SECTION HEADINGS ── */
-        .section-heading {
-            display: flex;
-            align-items: baseline;
-            gap: 16px;
-            margin: 52px 0 8px;
-        }
-
-        .section-heading h2 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.55rem;
-            font-weight: 700;
-            color: var(--ink);
-            letter-spacing: -0.3px;
-        }
-
-        .section-heading .section-num {
-            font-family: 'EB Garamond', serif;
-            font-size: 1rem;
-            font-style: italic;
-            color: var(--accent);
-        }
-
-        .section-rule {
-            height: 1px;
-            background: var(--rule);
-            margin-bottom: 24px;
-        }
-
-        .section-subtitle {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.1rem;
-            font-style: normal;
-            color: var(--ink-soft);
-            margin-bottom: 24px;
-            margin-top: -12px;
-        }
-
-        /* ── PROJECT GRID ── */
-        .project-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .project-card {
-            background: white;
-            border: 1px solid var(--rule);
-            border-radius: 3px;
-            padding: 22px;
-            display: flex;
-            flex-direction: column;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        .project-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 4px 16px rgba(139,26,26,0.06);
-        }
-
-        .project-card-label {
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
-
-        .project-card h3 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--ink);
-            line-height: 1.35;
-            margin-bottom: 10px;
-        }
-
-        .project-card p {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.1rem;
-            color: var(--ink-muted);
-            line-height: 1.65;
-            flex: 1;
-            margin-bottom: 16px;
-        }
-
-        .card-btn {
-            display: inline-block;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--accent);
-            text-decoration: none;
-            border: 1px solid var(--accent);
-            padding: 8px 16px;
-            border-radius: 2px;
-            align-self: flex-start;
-            transition: all 0.2s;
-        }
-
-        .card-btn:hover {
-            background: var(--accent);
-            color: white;
-            text-decoration: none;
-        }
-
-        /* ── DETAILS / ACCORDION ── */
-        details {
-            background: white;
-            border: 1px solid var(--rule);
-            border-radius: 3px;
-            padding: 16px 20px;
-            margin: 12px 0;
-            transition: border-color 0.2s;
-        }
-
-        details[open] { border-color: var(--accent); }
-
-        summary {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--ink);
-            cursor: pointer;
-            outline: none;
-            user-select: none;
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        summary::-webkit-details-marker { display: none; }
-
-        summary::before {
-            content: '▸';
-            color: var(--accent);
-            font-size: 0.85rem;
-            transition: transform 0.2s;
-            font-style: normal;
-            font-family: sans-serif;
-        }
-
-        details[open] summary::before { transform: rotate(90deg); }
-
-        .summary-label {
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-left: auto;
-            font-family: 'DM Sans', sans-serif;
-        }
-
-        .details-body {
-            padding: 14px 0 4px;
-            border-top: 1px solid var(--rule);
-            margin-top: 14px;
-        }
-
-        .details-body p {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.1rem;
-            color: var(--ink-muted);
-            margin-bottom: 12px;
-            line-height: 1.65;
-        }
-
-        .details-body a {
-            display: inline-block;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--accent);
-            text-decoration: none;
-            border: 1px solid var(--accent);
-            padding: 8px 16px;
-            border-radius: 2px;
-            margin-top: 4px;
-            transition: all 0.2s;
-        }
-
-        .details-body a:hover {
-            background: var(--accent);
-            color: white;
-        }
-
-        .details-body a + a {
-            margin-left: 8px;
-        }
-
-        /* ── VIDEO GRID ── */
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-top: 8px;
-        }
-
-        .video-card {
-            background: white;
-            border: 1px solid var(--rule);
-            border-radius: 3px;
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            transition: border-color 0.2s;
-        }
-
-        .video-card:hover { border-color: var(--accent); }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 9/16;
-            background: var(--ink);
-            border-radius: 2px;
-            overflow: hidden;
-            margin-bottom: 12px;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            border: 0;
-        }
-
-        .video-card h3 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--ink);
-            line-height: 1.35;
-            margin-bottom: 6px;
-        }
-
-        .video-card p {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1rem;
-            color: var(--ink-muted);
-            line-height: 1.55;
-            flex: 1;
-            margin-bottom: 12px;
-        }
-
-        /* ── POETRY SECTION ── */
-        .poetry-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .poetry-list li {
-            border-bottom: 1px solid var(--rule);
-            padding: 20px 0;
-        }
-
-        .poetry-list li:last-child { border-bottom: none; }
-
-        .poetry-list h3 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--ink);
-            margin-bottom: 5px;
-        }
-
-        .poetry-list p {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.1rem;
-            color: var(--ink-muted);
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-
-        .poetry-list a {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--accent);
-            text-decoration: none;
-            border: 1px solid var(--accent);
-            padding: 6px 12px;
-            border-radius: 2px;
-            display: inline-block;
-            transition: all 0.2s;
-        }
-
-        .poetry-list a:hover {
-            background: var(--accent);
-            color: white;
-        }
-
-        /* ── BOOK SHOWCASE ── */
-        .book-showcase {
-            display: grid;
-            grid-template-columns: 160px 1fr;
-            gap: 28px;
-            background: white;
-            border: 1px solid var(--rule);
-            border-radius: 3px;
-            padding: 24px;
-            margin-top: 20px;
-            align-items: center;
-        }
-
-        .book-showcase img {
-            width: 100%;
-            border-radius: 3px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        }
-
-        .book-showcase h3 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            font-style: italic;
-            color: var(--ink);
-            margin-bottom: 10px;
-        }
-
-        .book-showcase p {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1rem;
-            color: var(--ink-muted);
-            margin-bottom: 16px;
-            line-height: 1.65;
-        }
-
-        .book-showcase a {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--accent);
-            text-decoration: none;
-            border: 1px solid var(--accent);
-            padding: 7px 14px;
-            border-radius: 2px;
-            display: inline-block;
-            transition: all 0.2s;
-        }
-
-        .book-showcase a:hover {
-            background: var(--accent);
-            color: white;
-        }
-
-        /* ── QUOTE ── */
-        .closing-quote {
-            margin: 60px 0 20px;
-            padding: 32px 36px;
-            border-top: 2px solid var(--ink);
-            border-bottom: 2px solid var(--ink);
-            text-align: center;
-        }
-
-        .closing-quote p {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.3rem;
-            font-style: italic;
-            color: var(--ink);
-            line-height: 1.6;
-        }
-
-        .closing-quote span {
-            display: block;
-            margin-top: 12px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--ink-muted);
-            font-family: 'DM Sans', sans-serif;
-            font-style: normal;
-        }
-
-        /* ── HIRE BOX ── */
-        .hire-box {
-            background: var(--ink);
-            color: var(--paper);
-            padding: 48px 40px;
-            text-align: center;
-            border-radius: 3px;
-            margin: 40px 0;
-        }
-
-        .hire-box p {
-            font-family: 'EB Garamond', Georgia, serif;
-            font-size: 1.25rem;
-            font-style: italic;
-            color: rgba(250,249,246,0.95);
-            margin-bottom: 12px;
-        }
-
-        .hire-box a {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-        }
-
-        .hire-box a:hover { text-decoration: underline; }
-
-        /* ── FOOTER ── */
-        footer {
-            border-top: 1px solid var(--rule);
-            padding: 24px 40px;
-            text-align: center;
-            max-width: 860px;
-            margin: 0 auto;
-        }
-
-        footer p {
-            font-size: 11px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--ink-muted);
-        }
-
-        /* ── RESPONSIVE ── */
-        @media (max-width: 680px) {
-            .masthead, .container, footer { padding-left: 20px; padding-right: 20px; }
-            .bio-section { grid-template-columns: 1fr; }
-            .book-card { display: none; }
-            .project-grid { grid-template-columns: 1fr; }
-            .video-grid { grid-template-columns: 1fr; }
-            .book-showcase { grid-template-columns: 1fr; text-align: center; }
-            .book-showcase img { max-width: 140px; margin: 0 auto; }
-            .site-title { font-size: 2.8rem; }
-            .hire-box { padding: 36px 24px; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mistus Elordie | Satirist & Systemic Critic</title>
+  <meta name="description" content="Mistus Elordie is a satirist and systemic critic who writes about injustice and discrimination — and the flawed logic used to justify it." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --surface: #141414;
+      --border: #222222;
+      --gold: #C4A35A;
+      --gold-dim: #8a7040;
+      --text: #e2e2e2;
+      --muted: #777777;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      background: rgba(13,13,13,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(196,163,90,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 10vw, 7rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold);
+    }
+
+    .hero-surname {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6vw, 4.5rem);
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero-tagline {
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-sub {
+      font-size: 0.8rem;
+      color: var(--gold-dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      font-size: 0.8rem;
+      font-family: var(--font-body);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--gold);
+      color: var(--bg);
+    }
+
+    .btn-ghost {
+      border-color: var(--border);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--muted);
+      color: var(--text);
+      background: transparent;
+    }
+
+    /* SOCIAL STRIP */
+    .social-strip {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .social-strip a {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .social-strip a:hover { color: var(--gold); }
+
+    .social-strip::before,
+    .social-strip::after {
+      content: '';
+      width: 3rem;
+      height: 1px;
+      background: var(--border);
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 1.25rem; }
+      .social-strip { display: none; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- MASTHEAD -->
-    <header class="masthead">
-        <div class="masthead-rule-top">
-            <span>Portfolio</span>
-        </div>
+<nav>
+  <a href="index.html" class="nav-brand">Mistus Elordie</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+  </ul>
+</nav>
 
-        <h1 class="site-title"><em>Mistus</em> Elordie</h1>
-        <p class="site-tagline">Satirist &amp; Systemic Critic &nbsp;·&nbsp; The Sofa Sentinels' Gazette</p>
+<section class="hero">
+  <p class="hero-eyebrow">Founding Editor · The Sofa Sentinels' Gazette</p>
+  <h1 class="hero-name"><em>Mistus</em></h1>
+  <p class="hero-surname">Elordie</p>
+  <p class="hero-tagline">Satirist & systemic critic writing about the injustice baked into human society — and the flawed logic used to justify it.</p>
+  <p class="hero-sub">Investigative Essay · Political Satire · Brand Copywriting · Poetry</p>
+  <div class="hero-cta">
+    <a href="portfolio.html" class="btn">View Portfolio</a>
+    <a href="about.html" class="btn btn-ghost">About</a>
+  </div>
+</section>
 
-        <div class="masthead-links">
-            <a href="mailto:mistuselordie@gmail.com" class="link-pill">📩 Email</a>
-            <a href="https://youtube.com/@thesofasentinelsgazette" target="_blank" class="link-pill yt">▶ YouTube</a>
-            <a href="https://medium.com/@the3fsjournal" target="_blank" class="link-pill">✍ Medium — Social Commentary</a>
-            <a href="https://medium.com/@thesofasentinelsgazette" target="_blank" class="link-pill">✍ Medium — Satire</a>
-        </div>
-
-        <nav class="toc-strip">
-            <a href="#about">About</a>
-            <a href="#investigative-essays">Investigative Essays</a>
-            <a href="#brand-copy">Brand Copywriting</a>
-            <a href="#written-satire">Satire</a>
-            <a href="#short-form-video">Short-Form Video</a>
-            <a href="#poetry">Poetry</a>
-            <a href="#services">Services</a>
-        </nav>
-    </header>
-
-    <main class="container">
-
-        <!-- BIO -->
-        <section class="bio-section" id="about">
-            <div>
-                <img src="1000048048_2.jpg" alt="The Pen is the mightiest Sword, and The Sofa is a Warrior's Throne — The Sofa Sentinels" class="bio-banner">
-                <p class="bio-text">I'm a satirist and systemic critic who writes about the injustice and discrimination of minority groups baked into human society — and the flawed logic used to justify it.</p>
-
-                <p class="bio-meta">Founding Editor, <a href="https://youtube.com/@thesofasentinelsgazette" target="_blank">The Sofa Sentinels' Gazette</a> &nbsp;·&nbsp; Author, <a href="https://a.co/d/04jOsB0I" target="_blank">D.I.D I Die &amp; Leave Me Living?</a></p>
-            </div>
-            <div class="book-card">
-                <img src="1000046066.jpg" alt="D.I.D I Die & Leave Me Living? Book Cover">
-                <p class="book-card-title">D.I.D I Die &amp; Leave Me Living?</p>
-                <a href="https://a.co/d/04jOsB0I" target="_blank">View on Amazon →</a>
-            </div>
-        </section>
-
-
-        <!-- INVESTIGATIVE ESSAYS -->
-        <section id="investigative-essays">
-            <div class="section-heading">
-                <h2>Investigative Essays &amp; Literary Criticism</h2>
-                <span class="section-num">I.</span>
-            </div>
-            <div class="section-rule"></div>
-            <p class="section-subtitle">Structural critiques of legislation, clinical research, and systemic discrimination.</p>
-
-            <div class="project-grid">
-                <div class="project-card">
-                    <span class="project-card-label">Policy Essay</span>
-                    <h3>The Anti-Human Laws of Nigeria's Same-Sex Marriage Prohibition Act</h3>
-                    <p>A constitutional critique tracking the real-world humanitarian costs of Nigeria's 2014 SSMPA. Exposes the rise of targeted "Kito" entrapment violence and analyzes how the state weaponizes "public morality" to override constitutional protections against discrimination.</p>
-                    <a href="https://docs.google.com/document/d/1BQh3WxzCHUR6dO7pCl1f7WnM9EklNMzu-xW9h4mdtTs/edit?usp=drivesdk" target="_blank" class="card-btn">Read Full Essay →</a>
-                </div>
-
-                <div class="project-card">
-                    <span class="project-card-label">Cultural Commentary</span>
-                    <h3>Mansplainogenesis: How a Daily Annoyance Exposes a Deeply Rooted System</h3>
-                    <p>An analytical piece tracing the 19th-century roots of "mansplaining" back to the historical "Cult of Domesticity." Bridges the gap between historical institutional gatekeeping and modern-day manifestations like medical gaslighting.</p>
-                    <a href="https://docs.google.com/document/d/10l8wW2KL_SdmlI0XtyOvdlQ_iS9rk9tFKJj5oTRFEmw/edit?usp=drivesdk" target="_blank" class="card-btn">Read Full Essay →</a>
-                </div>
-
-                <div class="project-card">
-                    <span class="project-card-label">Medical Commentary</span>
-                    <h3>Why Can't We Understand the Female Body?</h3>
-                    <p>A structural breakdown of gender bias in clinical research, deconstructing the logical fallacies used to justify treating the male body as the human default while leaving female biology a medical mystery.</p>
-                    <a href="https://docs.google.com/document/d/1MbYuMP4D4hTycqySaJYG7rHBmdAot62Vl-bls8eIsYY/edit?usp=drivesdk" target="_blank" class="card-btn">Read Full Script →</a>
-                </div>
-
-                <div class="project-card">
-                    <span class="project-card-label">Socio-Biological Critique</span>
-                    <h3>The Myth of Self-Sacrificial Motherhood and The Maternal Instinct</h3>
-                    <p>A rigorous biological dismantling of the "natural caregiver" narrative, tracing how lactation, immune response, and oxytocin are misread as evidence of selfless maternal programming — and how these fabricated facts underpin real-world restrictions on women's autonomy, medical safety, and economic participation.</p>
-                    <a href="https://docs.google.com/document/d/1gvK2UI7FU_yZGCRt3JHEuu2fK_zhdk6yEOJTSKao-IA/edit?usp=drivesdk" target="_blank" class="card-btn">Read Full Essay →</a>
-                </div>
-
-            </div>
-
-            <details>
-                <summary>
-                    A Character Study from Jessie Garcia's <em>The Business Trip</em>: Jasmine Veronica Littleton
-                    <span class="summary-label">Literary Critique</span>
-                </summary>
-                <div class="details-body">
-                    <p>An analytical study examining themes of class resentment, gendered violence, and reactive misandry in contemporary psychological thrillers. Unpacks the moral gray zones where systemic oppression pushes fictional individuals to violence.</p>
-                    <a href="https://docs.google.com/document/d/1AWZa1KNO5XiWFL45AeYC3L24ojHB0h6-/edit?usp=drivesdk&ouid=113680127295564973224&rtpof=true&sd=true" target="_blank">Read Character Study →</a>
-                </div>
-            </details>
-        </section>
-
-
-
-
-        <!-- BRAND COPYWRITING -->
-        <section id="brand-copy">
-            <div class="section-heading">
-                <h2>Commercial &amp; Brand Copywriting</h2>
-                <span class="section-num">II.</span>
-            </div>
-            <div class="section-rule"></div>
-            <p class="section-subtitle">Distinct voices for brands that have something to say.</p>
-
-            <div class="project-grid">
-                <div class="project-card">
-                    <span class="project-card-label">Brand Copywriting</span>
-                    <h3>Project: Blah Blah Blah Candles</h3>
-                    <p><em>"A Refreshing Spark of Victory — in every candlestick."</em> Brand copy and strategy for a wellness candle brand — high-energy voice, irreverent tone, audience-specific framing.</p>
-                    <a href="https://docs.google.com/document/d/1mTw5fLvuT7owrO8BgLWhGdOAjV0wG9_4lNOeJrxzZts/edit?usp=drivesdk" target="_blank" class="card-btn">Read →</a>
-                </div>
-
-                <div class="project-card">
-                    <span class="project-card-label">Authority Branding</span>
-                    <h3>Project: Bob the Builder Constructions</h3>
-                    <p><em>"Can we build it? Hell yes, we can!"</em> Legacy-focused brand copy for a construction firm — bold, monumental voice built around permanence, ambition, and generational investment.</p>
-                    <a href="https://docs.google.com/document/d/1zXYkuUiKacy9OTsZZIoqC6pP6UgvNzv7GWnEuxFd9E4/edit?usp=drivesdk" target="_blank" class="card-btn">Read →</a>
-                </div>
-
-                <div class="project-card">
-                    <span class="project-card-label">Legal Branding</span>
-                    <h3>Project: Jatto Topa &amp; Associates</h3>
-                    <p><em>"Defenders of Rights. Prosecutors of Justice."</em> Full brand copy suite for a Nigerian law firm — mission statement, practice area descriptions, attorney bio, and institutional voice strategy.</p>
-                    <a href="https://docs.google.com/document/d/1NvuFIZCAwydx-E8NBJvnSIS82NdrZvKEfs_P77YAxeY/edit?usp=drivesdk" target="_blank" class="card-btn">Read →</a>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- WRITTEN SATIRE -->
-        <section id="written-satire">
-            <div class="section-heading">
-                <h2>Satire: Written Monologues &amp; Scripts</h2>
-                <span class="section-num">III.</span>
-            </div>
-            <div class="section-rule"></div>
-            <p class="section-subtitle">Epistolary satire, character monologues, and institutional parody.</p>
-
-            <div class="project-grid">
-                <div class="project-card">
-                    <span class="project-card-label">Speculative Fiction</span>
-                    <h3>Government to Confiscate 'Criminally Wealthy' Placental Nutrients in New Potentriot Act</h3>
-                    <p>Written as an official government memorandum, this piece draws an ironic parallel between extreme wealth redistribution and state-mandated reproductive control.</p>
-                    <a href="https://docs.google.com/document/d/1ygjwfVFi2icLUPdDCCRgd4YuWIHmzPVi06WKo0Ksdh8/edit?usp=drivesdk" target="_blank" class="card-btn">Read →</a>
-                </div>
-
-                <div class="project-card">
-                    <span class="project-card-label">Epistolary Satire</span>
-                    <h3>Renounced Feminist Pens Angry Letter to Non-Existent Matriarchy</h3>
-                    <p>Written from the perspective of reformed "patriarchal patriot" Moronica O'Problem, this satirical letter mocks anti-feminist rhetoric, tap-water conspiracy theories, and submission conditioning.</p>
-                    <a href="https://docs.google.com/document/d/1hZ0u-37oa_sYbB2-adwLytK04kKPctZGwR5KdeGcKtw/edit?usp=drivesdk" target="_blank" class="card-btn">Read →</a>
-                </div>
-
-                <div class="project-card">
-                    <span class="project-card-label">Character Monologue</span>
-                    <h3>Jailed Neighborhood 'Patriot' Demands Perfectly Grilled Vegan Steak From Mayor</h3>
-                    <p>An epistolary study of Chadwick T. Machoman — a hyper-masculine, paranoid neighborhood watchman whose letter from jail exposes delusions of grandeur, entitlement, and lizard-alien conspiracies.</p>
-                    <a href="https://docs.google.com/document/d/1OJoA9FLQGEvjqwTvftw0oe_cltBC83aLrbPsT3uBhq0/edit?usp=drivesdk" target="_blank" class="card-btn">Read →</a>
-                    <a href="https://docs.google.com/document/d/1irkYl7iuiIzv9Mtn2F-L_IzOOTigkXDNzw4sMtvx8bw/edit?usp=drivesdk" target="_blank" class="card-btn" style="margin-top: 8px;">🎬 Adapted Screenplay →</a>
-                </div>
-
-                <div class="project-card">
-                    <span class="project-card-label">Press Release Satire</span>
-                    <h3>The Bureau of Borderless Boundaries: Making America Safe Again</h3>
-                    <p>Written in response to the killing of Renée Nicole Macklin Good — a writer, poet, and mother of three — shot by an ICE agent in Minneapolis on January 7th, 2026. This press release parody adopts the institutional voice of ICE to expose the violent incompetence, and carefree attitude of the department of immigration during this period.</p>
-                    <a href="https://docs.google.com/document/d/1dNfMbJQLWYIE3bVHSnBSL-_h75Agl5cn2uYkQW_ELZE/edit?usp=drivesdk" target="_blank" class="card-btn">Read →</a>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- SHORT-FORM VIDEO -->
-        <section id="short-form-video">
-            <div class="section-heading">
-                <h2>Satire: Short-Form Video</h2>
-                <span class="section-num">IV.</span>
-            </div>
-            <div class="section-rule"></div>
-            <p class="section-subtitle">Solo production, high-concept visual satire, and rapid comedic pacing.</p>
-
-            <div class="video-grid">
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/1kZUYbJ4jxE" allowfullscreen></iframe>
-                    </div>
-                    <h3>Male Loneliness Epidemic Explained By An "Alpha Male"</h3>
-                    <p>Chadwick T. Machoman, Self-Appointed Spokesman for the Involuntarily Unburdened Male, identifies the cause of the male loneliness epidemic. And it isn't him.</p>
-                    <a href="https://docs.google.com/document/d/1OJoA9FLQGEvjqwTvftw0oe_cltBC83aLrbPsT3uBhq0/edit?usp=drivesdk" target="_blank" class="card-btn">View Script →</a>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/R_ZURKsZSWo" allowfullscreen></iframe>
-                    </div>
-                    <h3>The Ultimate Alpha Move</h3>
-                    <p>Satirical comedy parodying modern internet subcultures and relationship dynamics.</p>
-                    <a href="https://docs.google.com/document/d/1-BqjxDi8bpFXorgYFHM1caPo4sEYKWCU7WBAVN8RVXE/edit?usp=sharing" target="_blank" class="card-btn">View Script →</a>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/PrGWLAZRBUE" allowfullscreen></iframe>
-                    </div>
-                    <h3>The Road to Hell is Paved with the Fear of God</h3>
-                    <p>Dark humor animation exploring philosophical and religious themes through existential comedy.</p>
-                    <a href="https://docs.google.com/document/d/1MXMuBUcWsjEK2Iv3tw36utOjUbTqzAcVVIVU5wxXjpM/edit?usp=drivesdk" target="_blank" class="card-btn">View Script →</a>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/-OhFnEt-GYg" allowfullscreen></iframe>
-                    </div>
-                    <h3>The Government's 3-Step Plan to Fix the Economy</h3>
-                    <p>Political satire parodying government population and financial planning logic.</p>
-                    <a href="https://docs.google.com/document/d/1eD5VioD8LCfHcMc64Qm-GpOBMbEAbUbRTOFFNbbQ_CM/edit?usp=drivesdk" target="_blank" class="card-btn">View Script →</a>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/PnyxaeXadvM" allowfullscreen></iframe>
-                    </div>
-                    <h3>To Anyone Who Hates the Rainbow...</h3>
-                    <p>A sardonic thirty-second message for anyone who finds the existence of LGBTQ+ rights personally offensive.</p>
-                    <a href="https://youtube.com/shorts/PnyxaeXadvM" target="_blank" class="card-btn">Watch →</a>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/CA83DLapDyU" allowfullscreen></iframe>
-                    </div>
-                    <h3>A Trad-wife's Guide to Womanhood</h3>
-                    <p>Moronica O'Problem returns to educate you on the finer points of proper Feminine Living.</p>
-                    <a href="https://youtube.com/shorts/CA83DLapDyU" target="_blank" class="card-btn">Watch →</a>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- POETRY -->
-        <section id="poetry">
-            <div class="section-heading">
-                <h2>Poetry</h2>
-                <span class="section-num">V.</span>
-            </div>
-            <div class="section-rule"></div>
-
-            <ul class="poetry-list">
-                <li>
-                    <h3>Ode to Misogyny</h3>
-                    <p>A deadpan piece of rhythmic satire, confronting systemic misogyny and societal double standards.</p>
-                    <a href="https://docs.google.com/document/d/176tz0ge_SnUCERRpRZlh__fcLoSrUm3dbYDclIp63uA/edit?usp=drivesdk" target="_blank">Read →</a>
-                </li>
-                <li>
-                    <h3>Men Lives Matter TOO</h3>
-                    <p>An introspective piece tracking the daily performance demanded of women — and the moment that performance collides with male entitlement and incel violence.</p>
-                    <a href="https://docs.google.com/document/d/1hH7jk5hXjDY7Yfe7ZcnNxf1kfASO8JzObid72zqvmgc/edit?usp=drivesdk" target="_blank">Read →</a>
-                </li>
-                <li>
-                    <h3>Justice</h3>
-                    <p>A structured narrative poem tracing the arc of forced motherhood — from a coerced birth to a broken home to a courtroom — and indicting the system that creates the very people it later punishes.</p>
-                    <a href="https://docs.google.com/document/d/1xL8IKI1JpUvX_RnzQa_-EqnYf5xWGpk6Hk7K544mZiM/edit?usp=drivesdk" target="_blank">Read →</a>
-                </li>
-                <li>
-                    <h3>Addicts' Anthem</h3>
-                    <p>A raw, poignant piece exploring dependence, survival, and the human condition.</p>
-                    <a href="https://docs.google.com/document/d/1ylHvYbYfQNs7k8qxxNjK1HU_TGe7rHYsDLPUB8ULKO8/edit?usp=drivesdk" target="_blank">Read →</a>
-                </li>
-            </ul>
-
-            <div class="book-showcase">
-                <img src="1000046066.jpg" alt="D.I.D I Die & Leave Me Living? Book Cover">
-                <div>
-                    <h3>D.I.D I Die &amp; Leave Me Living?</h3>
-                    <p>A published poetry collection available on Amazon KDP. A sustained exploration of identity, survival, and the self left behind.</p>
-                    <a href="https://a.co/d/04jOsB0I" target="_blank">View on Amazon →</a>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- CLOSING QUOTE -->
-        <blockquote class="closing-quote">
-            <p>"People need to know things, and I've made it my mission to write it down for them."</p>
-            <span>— Mistus Elordie</span>
-        </blockquote>
-
-        <!-- SERVICES -->
-        <section id="services">
-            <div class="section-heading">
-                <h2>Services Offered</h2>
-                <span class="section-num">✦</span>
-            </div>
-            <div class="section-rule"></div>
-            <p class="section-subtitle">What I do — and how I do it.</p>
-
-            <details>
-                <summary>
-                    Structural Critique of Cultural Systems
-                    <span class="summary-label">Essays & Content</span>
-                </summary>
-                <div class="details-body">
-                    <p>Research-backed essays and editorial content that dismantle the flawed logic used to justify discrimination, institutional bias, and systemic injustice. I take dense policy documents, clinical research, and legislative frameworks and turn them into clear, accessible writing for public audiences — without dumbing down the argument or losing the thread.</p>
-                </div>
-            </details>
-
-            <details>
-                <summary>
-                    Mock Political & Social Commentary
-                    <span class="summary-label">Satire</span>
-                </summary>
-                <div class="details-body">
-                    <p>Character monologues, institutional parody, press release satire, and short-form scripts that expose systemic absurdity through deadpan irony. I write in voice — which means the piece sounds like it came from inside the system it's mocking.</p>
-                </div>
-            </details>
-
-            <details>
-                <summary>
-                    Brand Voice & Commercial Advertising
-                    <span class="summary-label">Copywriting</span>
-                </summary>
-                <div class="details-body">
-                    <p>Distinct, audience-specific copy for brands that refuse to sound generic. About pages, slogans, mission statements, attorney bios, and full voice strategy — written to be remembered and built to last.</p>
-                </div>
-            </details>
-        </section>
-
-        <!-- HIRE -->
-        <div class="hire-box">
-            <p>Available for advocacy writing, satire scripts, and editorial commissions.</p>
-            <a href="mailto:mistuselordie@gmail.com">mistuselordie@gmail.com</a>
-        </div>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Mistus Elordie &nbsp;·&nbsp; All Rights Reserved</p>
-    </footer>
+<div class="social-strip">
+  <a href="mailto:mistuselordie@gmail.com">Email</a>
+  <a href="https://youtube.com/@thesofasentinelsgazette" target="_blank">YouTube</a>
+  <a href="https://medium.com/@the3fsjournal" target="_blank">Medium</a>
+</div>
 
 </body>
 </html>
