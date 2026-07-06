@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio · Mistus Elordie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#faf9f6;--surface:#f2f1ee;--surface2:#e8e7e3;--border:#d8d6d0;--gold:#9a7c3a;--gold-dim:#7a6030;--text:#2d2d2d;--muted:#666666;--font-display:'Fraunces',Georgia,serif;--font-body:'Inter',system-ui,sans-serif;}
+html,body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.7;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2.5rem;background:rgba(250,249,246,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);}
+.nav-brand{font-family:var(--font-display);font-size:1rem;color:var(--gold);text-decoration:none;letter-spacing:0.03em;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.875rem;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+main{max-width:960px;margin:0 auto;padding:8rem 2rem 5rem;}
+.page-eyebrow{font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.page-title{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4rem);font-weight:700;line-height:1.1;margin-bottom:4rem;}
+.portfolio-section{margin-bottom:5rem;}
+.section-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--border);}
+.section-roman{font-family:var(--font-display);font-style:italic;font-size:1.5rem;color:var(--gold-dim);flex-shrink:0;}
+.section-info h2{font-family:var(--font-display);font-size:1.875rem;font-weight:700;margin-bottom:0.2rem;}
+.section-info p{font-size:0.875rem;color:var(--muted);font-weight:300;}
+.cards-grid{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);}
+.card{background:var(--surface);padding:1.75rem 2rem;display:flex;gap:1.5rem;align-items:flex-start;}
+.card-tag{font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-dim);white-space:nowrap;padding-top:0.2rem;min-width:100px;}
+.card-body{flex:1;}
+.card-title{font-family:var(--font-display);font-size:1.375rem;font-weight:700;margin-bottom:0.5rem;color:var(--text);line-height:1.3;}
+.card-desc{font-size:1rem;color:var(--muted);font-weight:300;line-height:1.6;margin-bottom:0.75rem;}
+.card-links{display:flex;gap:1.25rem;flex-wrap:wrap;}
+.card-read{font-size:0.875rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-dim);padding-bottom:1px;transition:color 0.2s;}
+.card-read:hover{color:var(--text);}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+.video-card{border:1px solid var(--border);background:var(--surface);overflow:hidden;}
+.video-card iframe{width:100%;aspect-ratio:16/9;display:block;border:none;}
+.video-card-body{padding:1.25rem;}
+.video-card-title{font-family:var(--font-display);font-size:1.375rem;margin-bottom:0.4rem;line-height:1.3;}
+.video-card-desc{font-size:1rem;color:var(--muted);font-weight:300;line-height:1.5;margin-bottom:0.75rem;}
+.poetry-list{border:1px solid var(--border);background:var(--surface);}
+.poetry-item{display:flex;align-items:flex-start;gap:1.5rem;padding:1.5rem 2rem;border-bottom:1px solid var(--border);}
+.poetry-item:last-child{border-bottom:none;}
+.poetry-num{font-family:var(--font-display);font-style:italic;font-size:1.2rem;color:var(--gold-dim);min-width:2rem;}
+.poetry-title{font-family:var(--font-display);font-size:1.375rem;margin-bottom:0.3rem;}
+.poetry-desc{font-size:1rem;color:var(--muted);font-weight:300;line-height:1.5;margin-bottom:0.5rem;}
+.book-banner{margin-top:1.5rem;padding:1.75rem 2rem;border:1px solid var(--border);background:var(--surface);display:flex;gap:2rem;align-items:center;flex-wrap:wrap;}
+.book-banner-title{font-family:var(--font-display);font-style:italic;font-size:1.1rem;margin-bottom:0.4rem;}
+.book-banner-desc{font-size:1rem;color:var(--muted);}
+.btn{display:inline-block;padding:0.65rem 1.5rem;font-size:0.75rem;font-family:var(--font-body);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border:1px solid var(--gold);color:var(--gold);background:transparent;transition:all 0.2s;white-space:nowrap;}
+.btn:hover{background:var(--gold);color:var(--bg);}
+@media(max-width:640px){nav{padding:1rem 1.25rem;}.nav-links{gap:1.25rem;}.card{flex-direction:column;gap:0.5rem;}.card-tag{min-width:unset;}}
+
+    .wave-bg {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .wave-bg svg {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 140vmax;
+      height: 140vmax;
+      opacity: 0.06;
+    }
+    main, .hero, nav { position: relative; z-index: 1; }
+  </style>
+</head>
+<body>
+  <!-- WAVE BACKGROUND -->
+  <div class="wave-bg">
+    <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="400" cy="400" r="350" fill="none" stroke="#C4A35A" stroke-width="1"/>
+      <circle cx="400" cy="400" r="280" fill="none" stroke="#C4A35A" stroke-width="1"/>
+      <circle cx="400" cy="400" r="210" fill="none" stroke="#C4A35A" stroke-width="1"/>
+      <circle cx="400" cy="400" r="140" fill="none" stroke="#C4A35A" stroke-width="1"/>
+      <circle cx="400" cy="400" r="70" fill="none" stroke="#C4A35A" stroke-width="1"/>
+    </svg>
+  </div>
+
+<nav>
+<a href="index.html" class="nav-brand">Mistus Elordie</a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="portfolio.html" class="active">Portfolio</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<main>
+<h1 class="page-title">Portfolio</h1>
+
+<section class="portfolio-section">
+<div class="section-header">
+<span class="section-roman">I.</span>
+<div class="section-info"><h2>Investigative Essays</h2><p>Structural critiques of legislation, clinical research, and systemic discrimination.</p></div>
+</div>
+<div class="cards-grid">
+<div class="card">
+<span class="card-tag">Policy Essay</span>
+<div class="card-body">
+<h3 class="card-title">Nigeria: Theocracy, Homophobia, And Injustice</h3>
+<p class="card-desc">An investigative essay documenting the human cost of Nigeria's anti-LGBTQ+ legal framework. It tracks kito violence, constitutional violations, and the state's weaponization of "public morality" to legitimize persecution.</p>
+<a class="card-read" href="https://docs.google.com/document/d/15PfII84Xh7UoNQhYXxwdgccdJY7FEeFH2PYazGHAB80/edit?usp=drivesdk" target="_blank">Read Full Essay →</a>
+</div>
+</div>
+<div class="card">
+<span class="card-tag">Cultural Commentary</span>
+<div class="card-body">
+<h3 class="card-title">Mansplainogenesis: How a Daily Annoyance Exposes a Deeply Rooted System</h3>
+<p class="card-desc">Traces the 19th-century roots of "mansplaining" back to the historical "Cult of Domesticity." Bridges institutional gatekeeping and modern-day manifestations including medical gaslighting.</p>
+<a class="card-read" href="https://docs.google.com/document/d/10l8wW2KL_SdmlI0XtyOvdlQ_iS9rk9tFKJj5oTRFEmw/edit?usp=drivesdk" target="_blank">Read Full Essay →</a>
+</div>
+</div>
+<div class="card">
+<span class="card-tag">Medical Commentary</span>
+<div class="card-body">
+<h3 class="card-title">Why Can't We Understand the Female Body?</h3>
+<p class="card-desc">A structural breakdown of gender bias in clinical research, deconstructing the logical fallacies used to justify treating the male body as the human default.</p>
+<a class="card-read" href="https://docs.google.com/document/d/1MbYuMP4D4hTycqySaJYG7rHBmdAot62Vl-bls8eIsYY/edit?usp=drivesdk" target="_blank">Read Full Essay →</a>
+</div>
+</div>
+<div class="card">
+<span class="card-tag">Socio-Biological Critique</span>
+<div class="card-body">
+<h3 class="card-title">The Myth of Self-Sacrificial Motherhood and The Maternal Instinct</h3>
+<p class="card-desc">An academic study dismantling the "natural caregiver" narrative — tracing how lactation, immune response, and the baby schema are misread as evidence of selfless maternal programming.</p>
+<a class="card-read" href="https://docs.google.com/document/d/1gvK2UI7FU_yZGCRt3JHEuu2fK_zhdk6yEOJTSKao-IA/edit?usp=drivesdk" target="_blank">Read Full Essay →</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="portfolio-section">
+<div class="section-header">
+<span class="section-roman">II.</span>
+<div class="section-info"><h2>Literary Criticism</h2><p>Social commentary via character studies in mainstream literature.</p></div>
+</div>
+<div class="cards-grid">
+<div class="card">
+<span class="card-tag">Literary Criticism</span>
+<div class="card-body">
+<h3 class="card-title">A Character Study from Verity by Colleen Hoover: Jeremy Crawford — Prince Charming or Serial Abuser?</h3>
+<p class="card-desc">Reframes the Verity discourse by examining Jeremy Crawford's pattern of targeting vulnerable women.</p>
+<a class="card-read" href="https://docs.google.com/document/d/1RP9Mf15Czq87GfdGrMJPnI4Gv02VtR1gS6NzqD6K-lw/edit?usp=drivesdk" target="_blank">Read Essay →</a>
+</div>
+</div>
+<div class="card">
+<span class="card-tag">Literary Criticism</span>
+<div class="card-body">
+<h3 class="card-title">A Character Study from Jessie Garcia's The Business Trip: Jasmine Veronica Littleton</h3>
+<p class="card-desc">An analytical study examining class resentment, gendered violence, and reactive misandry in contemporary psychological thrillers.</p>
+<a class="card-read" href="https://docs.google.com/document/d/1AWZa1KNO5XiWFL45AeYC3L24ojHB0h6-/edit?usp=drivesdk&ouid=113680127295564973224&rtpof=true&sd=true" target="_blank">Read Essay →</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="portfolio-section">
+<div class="section-header">
+<span class="section-roman">III.</span>
+<div class="section-info"><h2>Commercial & Brand Copywriting</h2><p>Distinct and comedic voices for brands.</p></div>
+</div>
+<div class="cards-grid">
+<div class="card">
+<span class="card-tag">Brand Copywriting</span>
+<div class="card-body">
+<h3 class="card-title">Project: Blah Blah Blah Candles</h3>
+<p class="card-desc">"A Refreshing Spark of Victory — in every candlestick." High-energy, irreverent brand voice for a wellness candle brand.</p>
+<a class="card-read" href="https://docs.google.com/document/d/1mTw5fLvuT7owrO8BgLWhGdOAjV0wG9_4lNOeJrxzZts/edit?usp=drivesdk" target="_blank">Read →</a>
+</div>
+</div>
+<div class="card">
+<span class="card-tag">Authority Branding</span>
+<div class="card-body">
+<h3 class="card-title">Project: Bob the Builder Constructions</h3>
+<p class="card-desc">"Can we build it? Hell yes, we can!" Bold, monumental voice built around permanence and generational investment.</p>
+<a class="card-read" href="https://docs.google.com/document/d/1zXYkuUiKacy9OTsZZIoqC6pP6UgvNzv7GWnEuxFd9E4/edit?usp=drivesdk" target="_blank">Read →</a>
+</div>
+</div>
+<div class="card">
+<span class="card-tag">Legal Branding</span>
+<div class="card-body">
+<h3 class="card-title">Project: Jatto Topa & Associates</h3>
+<p class="card-desc">"Defenders of Rights. Prosecutors of Justice." Full brand suite for a Nigerian law firm.</p>
+<a class="card-read" href="https://docs.google.com/document/d/1NvuFIZCAwydx-E8NBJvnSIS82NdrZvKEfs_P77YAxeY/edit?usp=drivesdk" target="_blank">Read →</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="portfolio-section">
+<div class="section-header">
+<span class="section-roman">IV.</span>
+<div class="section-info"><h2>Satire: Written Monologues & Scripts</h2><p>Epistolary satire, character monologues, and institutional parody.</p></div>
+</div>
+<div class="cards-grid">
+<div class="card">
+<span class="card-tag">Speculative Fiction</span>
+<div class="card-body">
+<h3 class="card-title">Government to Confiscate 'Criminally Wealthy' Placental Nutrients in New Potentriot Act</h3>
+<p class="card-desc">An official government memorandum drawing an ironic parallel between wealth redistribution and state-mandated reproductive control.</p>
+<a class="card-read" href="https://docs.google.com/document/d/1ygjwfVFi2icLUPdDCCRgd4YuWIHmzPVi06WKo0Ksdh8/edit?usp=drivesdk" target="_blank">Read →</a>
+</div>
+</div>
+<div class="card">
+<span class="card-tag">Epistolary Satire</span>
+<div class="card-body">
+<h3 class="card-title">Renounced Feminist Pens Angry Letter to Non-Existent Matriarchy</h3>
+<p class="card-desc">Written as reformed "patriarchal patriot" Moronica O'Problem — mocks anti-feminist rhetoric, conspiracy theories, and submission conditioning.</p>
+<a class="card-read" href="https://docs.google.com/document/d/1hZ0u-37oa_sYbB2-adwLytK04kKPctZGwR5KdeGcKtw/edit?usp=drivesdk" target="_blank">Read →</a>
+</div>
+</div>
+<div class="card">
+<span class="card-tag">Character Monologue</span>
+<div class="card-body">
+<h3 class="card-title">Jailed Neighborhood 'Patriot' Demands Perfectly Grilled Vegan Steak From Mayor</h3>
+<p class="card-desc">An epistolary study of Chadwick T. Machoman — paranoid neighborhood watchman whose jail letter exposes delusion, entitlement, and lizard-alien conspiracies.</p>
+<a class="card-read" href="https://docs.google.com/document/d/1OJoA9FLQGEvjqwTvftw0oe_cltBC83aLrbPsT3uBhq0/edit?usp=drivesdk" target="_blank">Read →</a>
+<a class="card-read" href="https://docs.google.com/document/d/1irkYl7iuiIzv9Mtn2F-L_IzOOTigkXDNzw4sMtvx8bw/edit?usp=drivesdk" target="_blank">Screenplay →</a>
+</div>
+</div>
+<div class="card">
+<span class="card-tag">Press Release Satire</span>
+<div class="card-body">
+<h3 class="card-title">The Bureau of Borderless Boundaries: Making America Safe Again</h3>
+<p class="card-desc">Written in response to the killing of Renée Nicole Macklin Good, shot by an ICE agent in Minneapolis, Jan 7 2026. Adopts the institutional voice of ICE to expose violent incompetence.</p>
+<a class="card-read" href="https://docs.google.com/document/d/1dNfMbJQLWYIE3bVHSnBSL-_h75Agl5cn2uYkQW_ELZE/edit?usp=drivesdk" target="_blank">Read →</a>
+</div>
+</div>
+<div class="card">
+<span class="card-tag">Brand Parody</span>
+<div class="card-body">
+<h3 class="card-title">Eau de Excrément by PretentiousPoo</h3>
+<p class="card-desc">"Transforming metabolic waste into atmospheric nourishment." Deadpan brand copy satire — wellness-industry language turned against itself.</p>
+<a class="card-read" href="https://docs.google.com/document/d/1Fi1b3TpRyZz8H8rSxcEsPK3ywKdbKavcESpmiMQYQSo/edit?usp=drivesdk" target="_blank">Read →</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="portfolio-section">
+<div class="section-header">
+<span class="section-roman">V.</span>
+<div class="section-info"><h2>Satire: Short-Form Video</h2><p>Solo production, high-concept visual satire, rapid comedic pacing.</p></div>
+</div>
+<div class="video-grid">
+<div class="video-card">
+<iframe src="https://www.youtube.com/embed/1kZUYbJ4jxE" loading="lazy" allowfullscreen></iframe>
+<div class="video-card-body"><h3 class="video-card-title">Male Loneliness Epidemic Explained By An "Alpha Male"</h3><p class="video-card-desc">Chadwick T. Machoman identifies the cause of the male loneliness epidemic. And it isn't him.</p><a class="card-read" href="https://docs.google.com/document/d/1OJoA9FLQGEvjqwTvftw0oe_cltBC83aLrbPsT3uBhq0/edit?usp=drivesdk" target="_blank">View Script →</a></div>
+</div>
+<div class="video-card">
+<iframe src="https://www.youtube.com/embed/R_ZURKsZSWo" loading="lazy" allowfullscreen></iframe>
+<div class="video-card-body"><h3 class="video-card-title">The Ultimate Alpha Move</h3><p class="video-card-desc">Satirical comedy parodying modern internet subcultures and relationship dynamics.</p><a class="card-read" href="https://docs.google.com/document/d/1-BqjxDi8bpFXorgYFHM1caPo4sEYKWCU7WBAVN8RVXE/edit?usp=sharing" target="_blank">View Script →</a></div>
+</div>
+<div class="video-card">
+<iframe src="https://www.youtube.com/embed/PrGWLAZRBUE" loading="lazy" allowfullscreen></iframe>
+<div class="video-card-body"><h3 class="video-card-title">The Road to Hell is Paved with the Fear of God</h3><p class="video-card-desc">Dark humor animation exploring philosophical and religious themes through existential comedy.</p><a class="card-read" href="https://docs.google.com/document/d/1MXMuBUcWsjEK2Iv3tw36utOjUbTqzAcVVIVU5wxXjpM/edit?usp=drivesdk" target="_blank">View Script →</a></div>
+</div>
+<div class="video-card">
+<iframe src="https://www.youtube.com/embed/-OhFnEt-GYg" loading="lazy" allowfullscreen></iframe>
+<div class="video-card-body"><h3 class="video-card-title">The Government's 3-Step Plan to Fix the Economy</h3><p class="video-card-desc">Political satire parodying government population and financial planning logic.</p><a class="card-read" href="https://docs.google.com/document/d/1eD5VioD8LCfHcMc64Qm-GpOBMbEAbUbRTOFFNbbQ_CM/edit?usp=drivesdk" target="_blank">View Script →</a></div>
+</div>
+<div class="video-card">
+<iframe src="https://www.youtube.com/embed/PnyxaeXadvM" loading="lazy" allowfullscreen></iframe>
+<div class="video-card-body"><h3 class="video-card-title">To Anyone Who Hates the Rainbow...</h3><p class="video-card-desc">A sardonic thirty-second message for anyone who finds the existence of LGBTQ+ rights personally offensive.</p><a class="card-read" href="https://youtube.com/shorts/PnyxaeXadvM" target="_blank">Watch →</a></div>
+</div>
+<div class="video-card">
+<iframe src="https://www.youtube.com/embed/CA83DLapDyU" loading="lazy" allowfullscreen></iframe>
+<div class="video-card-body"><h3 class="video-card-title">A Trad-wife's Guide to Womanhood</h3><p class="video-card-desc">Moronica O'Problem returns to educate you on the finer points of proper Feminine Living.</p><a class="card-read" href="https://youtube.com/shorts/CA83DLapDyU" target="_blank">Watch →</a></div>
+</div>
+</div>
+</section>
+
+<section class="portfolio-section">
+<div class="section-header">
+<span class="section-roman">VI.</span>
+<div class="section-info"><h2>Poetry</h2><p>Published collection and individual works.</p></div>
+</div>
+<div class="poetry-list">
+<div class="poetry-item">
+<span class="poetry-num">i.</span>
+<div><p class="poetry-title">Intersectionality of Societal Discrimination</p><p class="poetry-desc">A cascading poetic analysis on the hierarchies of social discrimination.</p><a class="card-read" href="https://docs.google.com/document/d/188CGwkSlZhjaV8NOVa0O6ZpLEv7TEgsRqt8ON59s3kA/edit?usp=drivesdk" target="_blank">Read →</a></div>
+</div>
+<div class="poetry-item">
+<span class="poetry-num">ii.</span>
+<div><p class="poetry-title">Ode to Misogyny</p><p class="poetry-desc">A deadpan piece of rhythmic satire confronting systemic misogyny and societal double standards.</p><a class="card-read" href="https://docs.google.com/document/d/176tz0ge_SnUCERRpRZlh__fcLoSrUm3dbYDclIp63uA/edit?usp=drivesdk" target="_blank">Read →</a></div>
+</div>
+<div class="poetry-item">
+<span class="poetry-num">iii.</span>
+<div><p class="poetry-title">Men Lives Matter TOO</p><p class="poetry-desc">An introspective piece tracking the daily performance demanded of women, colliding with male entitlement and incel violence.</p><a class="card-read" href="https://docs.google.com/document/d/1hH7jk5hXjDY7Yfe7ZcnNxf1kfASO8JzObid72zqvmgc/edit?usp=drivesdk" target="_blank">Read →</a></div>
+</div>
+<div class="poetry-item">
+<span class="poetry-num">iv.</span>
+<div><p class="poetry-title">Justice</p><p class="poetry-desc">A narrative poem tracing the arc of forced motherhood.</p><a class="card-read" href="https://docs.google.com/document/d/1xL8IKI1JpUvX_RnzQa_-EqnYf5xWGpk6Hk7K544mZiM/edit?usp=drivesdk" target="_blank">Read →</a></div>
+</div>
+<div class="poetry-item">
+<span class="poetry-num">v.</span>
+<div><p class="poetry-title">Addicts' Anthem</p><p class="poetry-desc">A raw, poignant piece exploring the psychology of chemical dependence.</p><a class="card-read" href="https://docs.google.com/document/d/1ylHvYbYfQNs7k8qxxNjK1HU_TGe7rHYsDLPUB8ULKO8/edit?usp=drivesdk" target="_blank">Read →</a></div>
+</div>
+</div>
+
+<div class="book-banner">
+<div style="flex:1;">
+<p class="book-banner-title">D.I.D I Die & Leave Me Living?</p>
+<p class="book-banner-desc">Published Poetry Collection · Amazon KDP · A sustained exploration of identity, survival, and the self left behind.</p>
+</div>
+<a href="https://a.co/d/04jOsB0I" target="_blank" class="btn">View on Amazon →</a>
+</div>
+</section>
+
+</main>
+</body>
+</html>

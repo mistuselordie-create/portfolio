@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mistus Elordie | Satirist & Systemic Critic</title>
+  <meta name="description" content="Mistus Elordie is a satirist and systemic critic who writes about injustice and discrimination — and the flawed logic used to justify it." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #faf9f6;
+      --surface: #f2f1ee;
+      --border: #d8d6d0;
+      --gold: #9a7c3a;
+      --gold-dim: #7a6030;
+      --text: #2d2d2d;
+      --muted: #666666777;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      background: rgba(250,249,246,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 1.125rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(196,163,90,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.875rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 480px;
+      line-height: 1.625;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--gold-dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      font-size: 0.875rem;
+      font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--gold);
+      color: var(--bg);
+    }
+
+    .btn-ghost {
+      border-color: var(--border);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--muted);
+      color: var(--text);
+      background: transparent;
+    }
+
+    /* SOCIAL STRIP */
+    .social-strip {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .social-strip a {
+      font-size: 1.375rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .social-strip a:hover { color: var(--gold); }
+
+    .social-strip::before,
+    .social-strip::after {
+      content: '';
+      width: 3rem;
+      height: 1px;
+      background: var(--border);
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 1.25rem; }
+      .social-strip { display: none; }
+    }
+  
+    .wave-bg {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .wave-bg svg {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 140vmax;
+      height: 140vmax;
+      opacity: 0.06;
+    }
+    main, .hero, nav { position: relative; z-index: 1; }
+  </style>
+</head>
+<body>
+  <!-- WAVE BACKGROUND -->
+  <div class="wave-bg">
+    <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="400" cy="400" r="350" fill="none" stroke="#C4A35A" stroke-width="1"/>
+      <circle cx="400" cy="400" r="280" fill="none" stroke="#C4A35A" stroke-width="1"/>
+      <circle cx="400" cy="400" r="210" fill="none" stroke="#C4A35A" stroke-width="1"/>
+      <circle cx="400" cy="400" r="140" fill="none" stroke="#C4A35A" stroke-width="1"/>
+      <circle cx="400" cy="400" r="70" fill="none" stroke="#C4A35A" stroke-width="1"/>
+    </svg>
+  </div>
+
+<nav>
+  <a href="index.html" class="nav-brand">Mistus Elordie</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <p class="hero-eyebrow">Founding Editor · The Sofa Sentinels' Gazette · The 3Fs Journal</p>
+  <h1 class="hero-name">Mistus Elordie</h1>
+  <p class="hero-tagline">Satirist & systemic critic writing about the injustice baked into human society — and the flawed logic used to justify it.</p>
+  <p class="hero-sub">Investigative Essay · Political Satire · Brand Copywriting · Poetry</p>
+  <div class="hero-cta">
+    <a href="portfolio.html" class="btn">View Portfolio</a>
+    <a href="about.html" class="btn btn-ghost">About</a>
+  </div>
+</section>
+
+<div class="social-strip">
+  <a href="mailto:mistuselordie@gmail.com">Email</a>
+  <a href="https://youtube.com/@thesofasentinelsgazette" target="_blank">YouTube</a>
+  <a href="https://medium.com/@the3fsjournal" target="_blank">Medium</a>
+</div>
+
+</body>
+</html>

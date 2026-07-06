@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact · Mistus Elordie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#faf9f6;--surface:#f2f1ee;--border:#d8d6d0;--gold:#9a7c3a;--gold-dim:#7a6030;--text:#2d2d2d;--muted:#666666;--font-display:'Fraunces',Georgia,serif;--font-body:'Inter',system-ui,sans-serif;}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.7;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2.5rem;background:rgba(250,249,246,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);}
+.nav-brand{font-family:var(--font-display);font-size:1rem;color:var(--gold);text-decoration:none;letter-spacing:0.03em;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+main{max-width:680px;margin:0 auto;padding:8rem 2rem 5rem;}
+.page-eyebrow{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.page-title{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem;}
+.page-intro{font-size:1rem;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:4rem;max-width:480px;}
+.contact-list{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:3rem;}
+.contact-item{background:var(--surface);padding:1.75rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;text-decoration:none;transition:background 0.2s;}
+.contact-item:hover{background:#1a1a1a;}
+.contact-label{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:0.3rem;}
+.contact-value{font-family:var(--font-display);font-size:1.05rem;color:var(--text);}
+.contact-arrow{color:var(--gold);font-size:1.2rem;flex-shrink:0;transition:transform 0.2s;}
+.contact-item:hover .contact-arrow{transform:translateX(4px);}
+.availability{border:1px solid var(--border);background:var(--surface);padding:2rem;margin-top:3rem;}
+.availability-title{font-family:var(--font-display);font-size:1rem;margin-bottom:0.75rem;color:var(--gold);}
+.availability-text{font-size:0.85rem;font-weight:300;color:var(--muted);line-height:1.7;}
+@media(max-width:640px){nav{padding:1rem 1.25rem;}.nav-links{gap:1.25rem;}.contact-item{flex-direction:column;align-items:flex-start;gap:0.5rem;}}
+
+    .wave-bg {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .wave-bg svg {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 140vmax;
+      height: 140vmax;
+      opacity: 0.06;
+    }
+    main, .hero, nav { position: relative; z-index: 1; }
+  </style>
+</head>
+<body>
+  <!-- WAVE BACKGROUND -->
+  <div class="wave-bg">
+    <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="400" cy="400" r="350" fill="none" stroke="#C4A35A" stroke-width="1"/>
+      <circle cx="400" cy="400" r="280" fill="none" stroke="#C4A35A" stroke-width="1"/>
+      <circle cx="400" cy="400" r="210" fill="none" stroke="#C4A35A" stroke-width="1"/>
+      <circle cx="400" cy="400" r="140" fill="none" stroke="#C4A35A" stroke-width="1"/>
+      <circle cx="400" cy="400" r="70" fill="none" stroke="#C4A35A" stroke-width="1"/>
+    </svg>
+  </div>
+
+<nav>
+<a href="index.html" class="nav-brand">Mistus Elordie</a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li><a href="contact.html" class="active">Contact</a></li>
+</ul>
+</nav>
+
+<main>
+<p class="page-eyebrow">Get in touch</p>
+<h1 class="page-title">Contact</h1>
+<p class="page-intro">Available for investigative essays, advocacy writing, satire scripts, literary criticism, and brand copywriting. International commissions welcome.</p>
+
+<div class="contact-list">
+  <a class="contact-item" href="mailto:mistuselordie@gmail.com">
+    <div>
+      <p class="contact-label">Email</p>
+      <p class="contact-value">mistuselordie@gmail.com</p>
+    </div>
+    <span class="contact-arrow">→</span>
+  </a>
+  <a class="contact-item" href="https://medium.com/@the3fsjournal" target="_blank">
+    <div>
+      <p class="contact-label">Medium · 3Fs Journal</p>
+      <p class="contact-value">The 3Fs Journal</p>
+    </div>
+    <span class="contact-arrow">→</span>
+  </a>
+  <a class="contact-item" href="https://medium.com/@thesofasentinelsgazette" target="_blank">
+    <div>
+      <p class="contact-label">Medium · Satire</p>
+      <p class="contact-value">The Sofa Sentinels' Gazette</p>
+    </div>
+    <span class="contact-arrow">→</span>
+  </a>
+  <a class="contact-item" href="https://youtube.com/@thesofasentinelsgazette" target="_blank">
+    <div>
+      <p class="contact-label">YouTube</p>
+      <p class="contact-value">The Sofa Sentinels' Gazette</p>
+    </div>
+    <span class="contact-arrow">→</span>
+  </a>
+</div>
+
+<div class="availability">
+  <p class="availability-title">Currently available for</p>
+  <p class="availability-text">Freelance commissions · NGO editorial and advocacy writing · International publication placements · Brand voice and copywriting · Script and satire writing for content creators</p>
+</div>
+</main>
+
+</body>
+</html>
